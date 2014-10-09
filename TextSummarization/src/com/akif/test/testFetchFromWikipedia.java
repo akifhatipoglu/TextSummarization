@@ -11,7 +11,7 @@ public class testFetchFromWikipedia {
 		fetchFromWikipedia parser = new fetchFromWikipedia("tr");
 		try{
 			String mainContent = parser.fetchMainContent("Michael Jordan");
-			String pageHeading = parser.fetchHeading("atatürk");
+			String pageHeading = parser.fetchHeading("Michael Jordan");
 			System.out.println("Test Page heading: "+pageHeading);
 			System.out.println("Main Content: "+mainContent);
 		}catch(IOException ex){
