@@ -9,7 +9,7 @@ import com.akif.sentence.sentenceSeparator;
 public class testSentenceSeparator {
 	public static void main(String[] args) {
 		testSentenceSeparator sentenceSeparator = new testSentenceSeparator();
-		String mainContent = sentenceSeparator.fetchFromWikipedia("atatürk");
+		String mainContent = sentenceSeparator.fetchFromWikipedia("Muse");
 		
 		sentenceSeparator separator = new sentenceSeparator(mainContent);
 		List<String> sentences = separator.getSentence();
