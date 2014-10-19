@@ -20,9 +20,6 @@ public class position {
 			positionValue = this.one/sentenceLength;
 			sentenceStructure.setPositionValue(positionValue);
 		}
-		/*for (sentenceStructure sentenceStructure : list) {
-			System.out.println(sentenceStructure.getSentenceLength() +" -- "+sentenceStructure.getPositionValue());
-		}*/
 	}
 	
 	

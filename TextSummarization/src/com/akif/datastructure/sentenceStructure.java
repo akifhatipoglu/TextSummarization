@@ -44,6 +44,7 @@ public class sentenceStructure {
 																	// sentence
 	private int sentenceLength;
 	private double positionValue;
+	private int titleWordCount;
 	
 	public sentenceStructure(int sentenceID, String sentence,
 			List<String> sentenceRoot) {
@@ -86,6 +87,12 @@ public class sentenceStructure {
 	}
 	public void setPositionValue(double positionValue) {
 		this.positionValue = positionValue;
+	}
+	public int getTitleWordCount() {
+		return titleWordCount;
+	}
+	public void setTitleWordCount(int titleWordCount) {
+		this.titleWordCount = titleWordCount;
 	}
 
 	public void setSentenceRoot(List<String> sentenceRoot) {
