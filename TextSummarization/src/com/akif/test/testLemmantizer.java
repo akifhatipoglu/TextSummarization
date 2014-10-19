@@ -27,7 +27,7 @@ public class testLemmantizer {
 		List<sentenceStructure> sentenceStructureList = lemma.getRoot();
 		
 		for (sentenceStructure sentenceStructure : sentenceStructureList) {
-			System.out.println(sentenceStructure.getSenteceID()+" --- "+sentenceStructure.getSentence()+" -- "+sentenceStructure.getSentenceRoot().toString());
+			System.out.println(sentenceStructure.getSenteceID()+" --- "+sentenceStructure.getSentence()+" -- "+sentenceStructure.getSentenceLength()+" -- "+sentenceStructure.getSentenceRoot().toString());
 		}
 		
 	}

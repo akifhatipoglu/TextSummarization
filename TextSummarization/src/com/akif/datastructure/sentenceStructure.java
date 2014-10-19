@@ -6,11 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class sentenceStructure {
-	private String sentence;
-	private int senteceID;
-	private List<String> sentenceRoot = new ArrayList<String>(); // all root in
-																	// the
-																	// sentence
+	
 	private String[] stepWordArray = new String[] { "acaba", "altı", "ama",
 			"ancak", "artık", "asla", "aslında", "az", "bana", "bazen", "bazı",
 			"bazıları", "bazısı", "belki", "ben", "beni", "benim", "beş",
@@ -38,14 +34,23 @@ public class sentenceStructure {
 			"şundan", "şunlar", "şunu", "şunun", "tabi", "tamam", "tüm",
 			"tümü", "üç", "üzere", "var", "ve", "veya", "veyahut", "ya",
 			"ya da", "yani", "yedi", "yerine", "yine", "yoksa", "zaten", "zira" };
+	
 	private HashSet<String> stepWordHash = new HashSet<String>(
 			Arrays.asList(stepWordArray));
-
+	private String sentence;
+	private int senteceID;
+	private List<String> sentenceRoot = new ArrayList<String>(); // all root in
+																	// the
+																	// sentence
+	private int sentenceLength;
+	private double positionValue;
+	
 	public sentenceStructure(int sentenceID, String sentence,
 			List<String> sentenceRoot) {
 		this.setSenteceID(sentenceID);
 		this.setSentence(sentence);
 		this.setSentenceRoot(sentenceRoot);
+		this.setPositionValue(0);
 	}
 
 	public boolean isStepWords(String root) {
@@ -59,7 +64,12 @@ public class sentenceStructure {
 	public void setSenteceID(int senteceID) {
 		this.senteceID = senteceID;
 	}
-
+	public int getSentenceLength() {
+		return sentenceLength;
+	}
+	public void setSentenceLength(int sentenceLength) {
+		this.sentenceLength = sentenceLength;
+	}
 	public String getSentence() {
 		return sentence;
 	}
@@ -70,6 +80,12 @@ public class sentenceStructure {
 
 	public void setSentence(String sentence) {
 		this.sentence = sentence;
+	}
+	public double getPositionValue() {
+		return positionValue;
+	}
+	public void setPositionValue(double positionValue) {
+		this.positionValue = positionValue;
 	}
 
 	public void setSentenceRoot(List<String> sentenceRoot) {
@@ -86,6 +102,7 @@ public class sentenceStructure {
 				}
 			}
 		}
+		this.setSentenceLength(this.sentenceRoot.size());// sentence length (number of stem word)
 	}
 
 }

@@ -19,8 +19,6 @@ public class lemmantizer {
 		this.sentences = sentences;
 	}
 	
-	
-	
 	public List<sentenceStructure> getRoot(){
 		List<sentenceStructure> sentenceStructureList = new ArrayList<sentenceStructure>();
 		try {
@@ -44,7 +42,7 @@ public class lemmantizer {
 							System.out.println("root:"+parse.root);
 							System.out.println("id: "+sentenceID+" entry: "+sentence+" root: "+parse.root);
 							roots.add(parse.root);
-							
+						    	
 						}
 						counter++;
 					}
@@ -52,7 +50,7 @@ public class lemmantizer {
 				sentenceID++;
 				System.out.println(roots.toString());
 				System.out.println();
-				sentenceStructure structure = new sentenceStructure(sentenceID, sentence,roots);
+				sentenceStructure structure = new sentenceStructure(sentenceID, sentence, roots);
 				sentenceStructureList.add(structure);
 				roots.clear();
 			}

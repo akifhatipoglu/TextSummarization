@@ -7,11 +7,12 @@ import com.akif.datastructure.sentenceStructure;
 import com.akif.datastructure.stemStructure;
 import com.akif.fetch.fetchFromWikipedia;
 import com.akif.lemmantizer.lemmantizer;
+import com.akif.matrix.position;
 import com.akif.matrix.tf_idf;
 import com.akif.sentence.sentenceSeparator;
 
-public class testTfIDf {
-
+public class testPositionMatrix {
+	
 	public static void main(String[] args) {
 		//fetch From Wikipedia
 		testSentenceSeparator sentenceSeparator = new testSentenceSeparator();
@@ -40,6 +41,13 @@ public class testTfIDf {
 			System.out.println("SentenceID: "+stem.getSentenceID()+" stemID:"+stem.getStemID()+" stem:"+stem.getStem()+" tfidf:"+stem.getTfidfValue());
 		}
 		
+		position posMatrix = new position(sentenceStructureList);
+		posMatrix.calculatePosition();
+		
+		for (sentenceStructure sentenceStructure : sentenceStructureList) {
+			System.out.println(sentenceStructure.getSenteceID() +" -- "+sentenceStructure.getPositionValue());
+		}
+		
 	}
 
 	public String fetchFromWikipedia(String articleSearch) {
@@ -59,4 +67,5 @@ public class testTfIDf {
 		return mainContent;
 	}
 	
+
 }
